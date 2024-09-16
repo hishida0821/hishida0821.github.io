@@ -1,11 +1,11 @@
 import Link from 'next/link'
 import React from 'react'
-import styles from '../styles/header.module.scss'
+import styles from '@/styles/header.module.scss'
 
 const Header = () => {
   return (
     <header className={styles.header}>
-      <div>
+      <div className={styles.header_inner}>
         <Link href="/">LOGO</Link>
         <Link href="/about/">About</Link>
         <Link href="/works/">Works</Link>
