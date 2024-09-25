@@ -8,6 +8,7 @@ const formatDate = (dateString) => {
   return formattedDate;
 };
 
+
 const fetchBlog = async (id) => {
   const data = await client.get({ endpoint: 'blog', contentId: id });
   return data;
