@@ -1,4 +1,4 @@
-import { client } from "@/libs/client";
+import client from "@/libs/client";
 
 const fetchWork = async (id) => {
   const data = await client.get({ endpoint: 'works', contentId: id });

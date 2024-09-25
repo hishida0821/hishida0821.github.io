@@ -1,4 +1,4 @@
-import { client } from "@/libs/client";
+import client from "@/libs/client";
 
 const formatDate = (dateString) => {
   if (!dateString) return '不明';
