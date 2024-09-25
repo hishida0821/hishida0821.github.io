@@ -28,6 +28,9 @@ jobs:
 
       # 環境変数の設定
       - name: Set environment variables
+        env:
+          SERVICE_DOMAIN: ${{ secrets.SERVICE_DOMAIN }}
+          API_KEY: ${{ secrets.API_KEY }}
         run: |
           echo "SERVICE_DOMAIN=${{ secrets.SERVICE_DOMAIN }}" >> $GITHUB_ENV
           echo "API_KEY=${{ secrets.API_KEY }}" >> $GITHUB_ENV
