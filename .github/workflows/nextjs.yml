@@ -3,12 +3,12 @@ name: Deploy Next.js site to Pages
 on:
   push:
     branches: ["main"]
-  workflow_dispatch:
   repository_dispatch:
-    repository_dispatch:
-      types: 
-        - works
-        - blog
+    types: 
+      - works
+      - blog
+  
+  workflow_dispatch:
 
 permissions:
   contents: read
@@ -28,6 +28,9 @@ jobs:
 
       # 環境変数の設定
       - name: Set environment variables
+        env:
+          SERVICE_DOMAIN: ${{ secrets.SERVICE_DOMAIN }}
+          API_KEY: ${{ secrets.API_KEY }}
         run: |
           echo "SERVICE_DOMAIN=${{ secrets.SERVICE_DOMAIN }}" >> $GITHUB_ENV
           echo "API_KEY=${{ secrets.API_KEY }}" >> $GITHUB_ENV
@@ -75,7 +78,7 @@ jobs:
         run: ${{ steps.detect-package-manager.outputs.manager }} ${{ steps.detect-package-manager.outputs.command }}
 
       - name: Build with Next.js
-        run: ${{ steps.detect-package-manager.outputs.runner }} next build
+         run: ${{ steps.detect-package-manager.outputs.runner }} next build
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
