@@ -33,6 +33,13 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+
+      # 環境変数の設定
+      - name: Set up environment variables
+        env:
+          SERVICE_DOMAIN: ${{ secrets.SERVICE_DOMAIN }}
+          API_KEY: ${{ secrets.API_KEY }}
+
       - name: Detect package manager
         id: detect-package-manager
         run: |
