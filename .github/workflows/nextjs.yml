@@ -5,7 +5,10 @@ on:
     branches: ["main"]
   workflow_dispatch:
   repository_dispatch:
-    types: [microcms]
+    repository_dispatch:
+      types: 
+        - works
+        - blog
 
 permissions:
   contents: read
