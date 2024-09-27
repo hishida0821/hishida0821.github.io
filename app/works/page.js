@@ -17,6 +17,7 @@ async function fetchWorks() {
 
 const works = async () =>  {
   const worksData = await fetchWorks();
+  console.log(worksData)
   return (
     <div>
       this is works page
