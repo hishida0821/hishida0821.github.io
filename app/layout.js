@@ -1,4 +1,4 @@
-
+import { Ubuntu } from "next/font/google";
 import styles from '@/styles/global.module.scss'
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -9,10 +9,15 @@ export const metadata = {
   description: "",
 };
 
+const ubuntu = Ubuntu({
+  weight: "400",
+  subsets: ["latin"]
+});
+
 export default function RootLayout({ children }) {
   return (
     <html lang="en" className={styles.html}>
-      <body className={styles.body}>
+      <body className={`${ubuntu.className} ${styles.body}`}>
         <Header />
         <main className={styles.main}>
           <Layout>
