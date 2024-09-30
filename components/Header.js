@@ -6,10 +6,16 @@ const Header = () => {
   return (
     <header className={styles.header}>
       <div className={styles.header_inner}>
-        <Link href="/">LOGO</Link>
-        <Link href="/about/">About</Link>
-        <Link href="/works/">Works</Link>
-        <Link href="/blog/">Blog</Link>
+        <div className={styles.header_logo}>
+          <Link href="/">HIROKI ISHIDA</Link>
+        </div>
+        <nav className={styles.header_navigation}>
+          <ul className={styles.header_navigation_list}>
+            <li className={styles.header_navigation_item}><Link href="/about/">ABOUT</Link></li>
+            <li className={styles.header_navigation_item}> <Link href="/works/">WORKS</Link></li>
+            <li className={styles.header_navigation_item}><Link href="/blog/">BLOG</Link></li>
+          </ul>
+        </nav>
       </div>
     </header>
   )
