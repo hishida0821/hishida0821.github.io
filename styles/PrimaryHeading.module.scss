@@ -1,0 +1,11 @@
+@use "./mixin";
+@use "./color" as color;
+
+.primary_heading {
+  font-size: 3.2rem;
+  font-weight: bold;
+  margin-bottom: 48px;
+  @include mixin.mq(sp) {
+    margin-bottom: 32px;
+  }
+}

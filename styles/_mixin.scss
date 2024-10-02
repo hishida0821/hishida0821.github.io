@@ -1,3 +1,7 @@
+/*
+  breakpoint
+*/
+
 $breakpoint: (
   sp: 'screen and (max-width: 767px)',
   tab: 'screen and (min-width: 768px)',
@@ -13,3 +17,4 @@ $breakpoint: (
 // @include mixin.mq(sp) {}
 // @include mixin.mq(tab) {}
 // @include mixin.mq(pc) {}
+

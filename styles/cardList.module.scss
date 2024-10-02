@@ -1,0 +1,14 @@
+@use "./mixin";
+@use "./color" as color;
+
+.cardList {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  & > div {
+    width: calc((100% - 48px) / 4);
+    @include mixin.mq(sp) {
+      width: calc((100% - 16px) / 2);
+    }
+  }
+}
