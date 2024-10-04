@@ -1,7 +1,7 @@
 import React from 'react'
 import styles from '@/styles/layout.module.scss'
 
-const Layout = ({children}) => {
+export default function Layout({children}) {
   return (
     <sectoin className={styles.section}>
       <div className={styles.section_inner}>
@@ -10,5 +10,3 @@ const Layout = ({children}) => {
     </sectoin>
   )
 }
-
-export default Layout

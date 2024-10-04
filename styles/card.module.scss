@@ -1,0 +1,8 @@
+@use "./mixin";
+@use "./color" as color;
+
+.card {
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+}

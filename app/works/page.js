@@ -1,6 +1,9 @@
 import React from 'react'
 import Link from 'next/link';
 import client from "@/libs/client";
+import PrimaryHeading from '@/components/PrimaryHeading';
+import CardList from '@/components/CardList';
+import Card from '@/components/Card';
 
 const formatDate = (dateString) => {
   if (!dateString) return '不明';
@@ -17,30 +20,24 @@ async function fetchWorks() {
 
 const works = async () =>  {
   const worksData = await fetchWorks();
-  console.log(worksData)
+  // console.log(worksData)
   return (
-    <div>
-      this is works page
-
-      <ul>
+    <>
+      <PrimaryHeading text="WORKS" />
+      <CardList>
         {worksData.map((work) => (
-          <li key={work.id}>
-            <Link href={`/works/${work.id}`}>
-              {work.eyecatch && (
-                <figure>
-                  <img
-                    src={work.eyecatch.url}
-                    alt={work.eyecatch.alt || 'アイキャッチ画像'}
-                  />
-                </figure>
-              )}
-              <span>{formatDate(work.publishedAt)}</span>
-              <p>{work.title}</p>
-              </Link>
-          </li>
+          <div key={work.id}>
+            <Card
+              url={`/works/${work.id}`}
+              image={work.eyecatch.url}
+              title={work.title}
+              date={formatDate(work.publishedAt)}
+              text={work.text}
+            />
+          </div>
         ))}
-      </ul>
-    </div>
+      </CardList>
+    </>
   )
 }
 

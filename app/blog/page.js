@@ -1,6 +1,9 @@
 import React from 'react'
 import Link from 'next/link';
 import client from "@/libs/client";
+import PrimaryHeading from '@/components/PrimaryHeading';
+import CardList from '@/components/CardList';
+import Card from '@/components/Card';
 
 const formatDate = (dateString) => {
   if (!dateString) return '不明';
@@ -19,28 +22,22 @@ const Blog = async () => {
   const blogData = await fetchBlog();
 
   return (
-    <div>
-      this is blog page
-
-      <ul>
+    <>
+      <PrimaryHeading text="BLOG" />
+      <CardList>
         {blogData.map((blog) => (
-          <li key={blog.id}>
-            <Link href={`/blog/${blog.id}`}>
-              {blog.eyecatch && (
-                <figure>
-                  <img
-                    src={blog.eyecatch.url}
-                    alt={blog.eyecatch.alt || 'アイキャッチ画像'}
-                  />
-                </figure>
-              )}
-              <span>{formatDate(blog.publishedAt)}</span>
-              <p>{blog.title}</p>
-            </Link>
-          </li>
+          <div key={blog.id}>
+            <Card
+              url={`/blog/${blog.id}`}
+              image={blog.eyecatch.url}
+              title={blog.title}
+              date={formatDate(blog.publishedAt)}
+              text={blog.text}
+            />
+          </div>
         ))}
-      </ul>
-    </div>
+      </CardList>
+    </>
   )
 }
 
