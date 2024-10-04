@@ -16,7 +16,7 @@ const ubuntu = Ubuntu({
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
+    <html lang="ja">
       <body className={ubuntu.className}>
         <Header />
         <main>
