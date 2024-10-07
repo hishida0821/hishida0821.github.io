@@ -13,7 +13,7 @@ const fetchWork = async (id) => {
   return data;
 };
 
-const WorkPage = async ({ params }) => {
+const WorksPage = async ({ params }) => {
   const { id } = params;
   const work = await fetchWork(id);
 
@@ -38,7 +38,7 @@ const WorkPage = async ({ params }) => {
   );
 };
 
-export default WorkPage;
+export default WorksPage;
 
 export async function generateStaticParams() {
   const data = await client.get({ endpoint: 'works' });

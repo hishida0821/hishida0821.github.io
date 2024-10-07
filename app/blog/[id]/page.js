@@ -14,7 +14,7 @@ const fetchBlog = async (id) => {
   return data;
 };
 
-const WorkPage = async ({ params }) => {
+const BlogPage = async ({ params }) => {
   const { id } = params;
   const blog = await fetchBlog(id);
 
@@ -39,7 +39,7 @@ const WorkPage = async ({ params }) => {
   );
 };
 
-export default WorkPage;
+export default BlogPage;
 
 export async function generateStaticParams() {
   const data = await client.get({ endpoint: 'blog' });
