@@ -35,6 +35,12 @@ jobs:
           echo "SERVICE_DOMAIN=${{ secrets.SERVICE_DOMAIN }}" >> $GITHUB_ENV
           echo "API_KEY=${{ secrets.API_KEY }}" >> $GITHUB_ENV
 
+      # 環境変数のデバッグ
+      - name: Show environment variables
+        run: |
+          echo "SERVICE_DOMAIN=${{ secrets.SERVICE_DOMAIN }}"
+          echo "API_KEY=${{ secrets.API_KEY }}"
+
       - name: Detect package manager
         id: detect-package-manager
         run: |
