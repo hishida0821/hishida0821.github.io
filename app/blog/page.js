@@ -1,6 +1,8 @@
 import React from 'react'
 import Link from 'next/link';
 import client from "@/libs/client";
+import { basePath } from "@/next.config";
+const BASE_PATH = basePath ? basePath : "";
 import PrimaryHeading from '@/components/PrimaryHeading';
 import CardList from '@/components/CardList';
 import Card from '@/components/Card';
@@ -28,7 +30,7 @@ const Blog = async () => {
         {blogData.map((blog) => (
           <div key={blog.id}>
             <Card
-              url={`/hirokiishida/blog/${blog.id}`}
+              url={`${BASE_PATH}/blog/${blog.id}`}
               image={blog.eyecatch.url}
               title={blog.title}
               date={formatDate(blog.publishedAt)}
