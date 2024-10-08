@@ -1,6 +1,8 @@
 import React from 'react'
 import Link from 'next/link';
 import client from "@/libs/client";
+import { basePath } from "@/next.config";
+const BASE_PATH = basePath ? basePath : "";
 import PrimaryHeading from '@/components/PrimaryHeading';
 import CardList from '@/components/CardList';
 import Card from '@/components/Card';
@@ -28,7 +30,7 @@ const works = async () =>  {
         {worksData.map((work) => (
           <div key={work.id}>
             <Card
-              url={`/hirokiishida/works/${work.id}`}
+              url={`${BASE_PATH}/works/${work.id}`}
               image={work.eyecatch.url}
               title={work.title}
               date={formatDate(work.publishedAt)}
