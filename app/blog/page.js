@@ -30,7 +30,7 @@ const Blog = async () => {
         {blogData.map((blog) => (
           <div key={blog.id}>
             <Card
-              url={`${BASE_PATH}/blog/${blog.id}`}
+              url={`/hirokiishida/blog/${blog.id}`}
               image={blog.eyecatch.url}
               title={blog.title}
               date={formatDate(blog.publishedAt)}
