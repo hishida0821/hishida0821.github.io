@@ -1,0 +1,9 @@
+@use "./mixin";
+@use "./color" as color;
+
+.home {
+  &_musthead {}
+  &_about {
+    padding: 48px 0;
+  }
+}

@@ -8,4 +8,10 @@
   @include mixin.mq(sp) {
     margin-bottom: 32px;
   }
+  &:not(:first-child) {
+    margin-top: 48px;
+    @include mixin.mq(sp) {
+      margin-top: 32px;
+    }
+  }
 }

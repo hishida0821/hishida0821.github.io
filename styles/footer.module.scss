@@ -1,12 +1,14 @@
 @use './mixin';
 
 .footer {
-  padding-top: 8px;
-  padding-bottom: 8px;
   background: #fff;
   border: 3px solid #000;
   &_inner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     max-width: 1032px;
+    height: 40px;
     margin: 0 auto;
     padding: 0 16px;
   }
