@@ -1,8 +1,5 @@
 import React from 'react'
-import Link from 'next/link';
 import client from "@/libs/client";
-import { basePath } from "@/next.config";
-const BASE_PATH = basePath ? basePath : "";
 import PrimaryHeading from '@/components/PrimaryHeading';
 import CardList from '@/components/CardList';
 import Card from '@/components/Card';
