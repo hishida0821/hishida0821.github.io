@@ -30,7 +30,7 @@ const works = async () =>  {
         {worksData.map((work) => (
           <div key={work.id}>
             <Card
-              url={`/hirokiishida/works/${work.id}`}
+              url={`/works/${work.id}`}
               image={work.eyecatch.url}
               title={work.title}
               date={formatDate(work.publishedAt)}
