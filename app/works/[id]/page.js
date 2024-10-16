@@ -1,4 +1,5 @@
 import client from "@/libs/client";
+import styles from "@/styles/worksBlog.module.scss";
 
 const formatDate = (dateString) => {
   if (!dateString) return '不明';
@@ -18,23 +19,25 @@ const WorksPage = async ({ params }) => {
   const work = await fetchWork(id);
 
   return (
-    <>
-      <h1>{work.title}</h1>
-      <p>{formatDate(work.publishedAt)}</p>
+    <div className={styles.worksBlog}>
+      <h1 className={styles.worksBlog_title}>{work.title}</h1>
+      <p className={styles.worksBlog_date}>{formatDate(work.publishedAt)}</p>
       {work.eyecatch && (
-        <figure>
+        <figure className={styles.worksBlog_thumbnail}>
           <img
             src={work.eyecatch.url}
             alt={work.eyecatch.alt || 'アイキャッチ画像'}
           />
         </figure>
       )}
-      <div
-        dangerouslySetInnerHTML={{
-          __html: `${work.content}`,
-        }}
-      />
-    </>
+      <div className={styles.worksBlog_content}>
+        <div
+          dangerouslySetInnerHTML={{
+            __html: `${work.content}`,
+          }}
+          />
+        </div>
+      </div>
   );
 };
 

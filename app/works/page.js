@@ -24,12 +24,13 @@ const works = async () =>  {
     <>
       <PrimaryHeading text="WORKS" />
       <CardList>
-        {worksData.map((work) => (
+        {worksData.map((work, category) => (
           <div key={work.id}>
             <Card
               url={`/works/${work.id}`}
               image={work.eyecatch.url}
               title={work.title}
+              // category={`${category.name}`}
               date={formatDate(work.publishedAt)}
               text={work.text}
             />
