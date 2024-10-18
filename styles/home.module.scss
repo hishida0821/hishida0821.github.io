@@ -2,8 +2,19 @@
 @use "./color" as color;
 
 .home {
-  &_musthead {}
+  &_musthead {
+    padding: 80px 0;
+  }
   &_about {
     padding: 48px 0;
+  }
+  &_works {
+    padding: 48px 0;
+  }
+  &_blog {
+    padding: 48px 0 80px;
+  }
+  &_lead_text {
+    margin-bottom: 16px;
   }
 }

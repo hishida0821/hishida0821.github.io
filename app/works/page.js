@@ -3,6 +3,7 @@ import client from "@/libs/client";
 import PrimaryHeading from '@/components/PrimaryHeading';
 import CardList from '@/components/CardList';
 import Card from '@/components/Card';
+import BackButton from '@/components/BackButton';
 
 const formatDate = (dateString) => {
   if (!dateString) return '不明';
@@ -37,6 +38,7 @@ const works = async () =>  {
           </div>
         ))}
       </CardList>
+      <BackButton />
     </>
   )
 }

@@ -5,4 +5,14 @@
   display: flex;
   flex-direction: column;
   background: #fff;
+  &_date {
+    display: inline-block;
+    font-size: 1.2rem;
+    margin-top: 8px;
+  }
+  &_title {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+  }
 }

@@ -10,11 +10,12 @@
       justify-content: center;
       gap: 16px 0;
       position: fixed;
-      top: 48px;
+      top: 51px;
       left: 0;
       transform: translateX(100vw);
       width: 100%;
-      height: calc(100vh - 48px);
+      height: calc(100vh - 51px);
+      height: calc(100dvh - 51px);
       background: #fff;
       border: 3px solid #000;
       opacity: 0;
