@@ -3,7 +3,7 @@ import client from "@/libs/client";
 import PrimaryHeading from '@/components/PrimaryHeading';
 import CardList from '@/components/CardList';
 import Card from '@/components/Card';
-import BackButton from '@/components/BackButton';
+import Button from '@/components/Button';
 
 const formatDate = (dateString) => {
   if (!dateString) return '不明';
@@ -25,20 +25,20 @@ const works = async () =>  {
     <>
       <PrimaryHeading text="WORKS" />
       <CardList>
-        {worksData.map((work, category) => (
+        {worksData.map((work) => (
           <div key={work.id}>
             <Card
               url={`/works/${work.id}`}
               image={work.eyecatch.url}
               title={work.title}
-              // category={`${category.name}`}
+              category={`${work.category.name}`}
               date={formatDate(work.publishedAt)}
               text={work.text}
             />
           </div>
         ))}
       </CardList>
-      <BackButton />
+      <Button variant="back" url="/">TOP</Button>
     </>
   )
 }

@@ -4,6 +4,7 @@ import SecondaryHeading from "@/components/SecondaryHeading";
 import TertiaryHeading from "@/components/TertiaryHeading";
 import CardList from '@/components/CardList';
 import Card from '@/components/Card';
+import Button from '@/components/Button';
 import styles from "@/styles/home.module.scss";
 
 const formatDate = (dateString) => {
@@ -41,7 +42,7 @@ const Home = async () => {
         <Musthead />
       </section>
 
-      <section className={styles.home_about}>
+      {/* <section className={styles.home_section}>
         <SecondaryHeading text="ABOUT"/>
         <p className={styles.home_common_text}>
           東京都在住のWebディレクター兼、マークアップエンジニアです。<br />
@@ -53,9 +54,9 @@ const Home = async () => {
           フレームワーク : Next.js<br />
           その他 : Wordpress、MicroCMS
         </p>
-      </section>
+      </section> */}
 
-      <section className={styles.home_works}>
+      <section className={styles.home_section}>
         <SecondaryHeading text="WORKS" />
         <p className={styles.home_lead_text}>
           過去に制作したプロダクトです。
@@ -67,18 +68,20 @@ const Home = async () => {
                 url={`/works/${work.id}`}
                 image={work.eyecatch.url}
                 title={work.title}
+                category={`${work.category.name}`}
                 date={formatDate(work.publishedAt)}
                 text={work.text}
               />
             </div>
           ))}
         </CardList>
+        <Button variant="next" url="/works/">MORE</Button>
       </section>
 
-      <section className={styles.home_blog}>
+      <section className={styles.home_section}>
         <SecondaryHeading text="BLOG" />
         <p className={styles.home_lead_text}>
-          プログラミングに関してのナレッジを備忘録として残します。
+          勉強したことや趣味に関しての備忘録です。
         </p>
         <CardList>
           {blogData.map((blog) => (
@@ -87,12 +90,14 @@ const Home = async () => {
                 url={`/blog/${blog.id}`}
                 image={blog.eyecatch.url}
                 title={blog.title}
+                category={`${blog.category.name}`}
                 date={formatDate(blog.publishedAt)}
                 text={blog.text}
               />
             </div>
           ))}
         </CardList>
+        <Button variant="next" url="/blog/">MORE</Button>
       </section>
     </>
   );
