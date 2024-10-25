@@ -1,4 +1,5 @@
 import client from "@/libs/client";
+import styles from "@/styles/article.module.scss";
 
 const formatDate = (dateString) => {
   if (!dateString) return '不明';
@@ -20,21 +21,26 @@ const BlogPage = async ({ params }) => {
 
   return (
     <>
-      <h1>{blog.title}</h1>
+      <div className={styles.article}>
+      <h1 className={styles.article_title}>{blog.title}</h1>
+      <span className={styles.article_category}>{blog.category.name}</span>
+      <p className={styles.article_date}>{formatDate(blog.publishedAt)}</p>
       {blog.eyecatch && (
-        <figure>
+        <figure className={styles.article_thumbnail}>
           <img
             src={blog.eyecatch.url}
             alt={blog.eyecatch.alt || 'アイキャッチ画像'}
           />
         </figure>
       )}
-      <span>{formatDate(blog.publishedAt)}</span>
-      <div
-        dangerouslySetInnerHTML={{
-          __html: `${blog.content}`,
-        }}
-      />
+      <div className={styles.article_content}>
+        <div
+          dangerouslySetInnerHTML={{
+            __html: `${blog.content}`,
+          }}
+          />
+        </div>
+      </div>
     </>
   );
 };

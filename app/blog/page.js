@@ -3,7 +3,7 @@ import client from "@/libs/client";
 import PrimaryHeading from '@/components/PrimaryHeading';
 import CardList from '@/components/CardList';
 import Card from '@/components/Card';
-import BackButton from '@/components/BackButton';
+import Button from '@/components/Button';
 
 const formatDate = (dateString) => {
   if (!dateString) return '不明';
@@ -20,6 +20,7 @@ async function fetchBlog() {
 
 const Blog = async () => {
   const blogData = await fetchBlog();
+  console.log(blogData);
 
   return (
     <>
@@ -31,13 +32,14 @@ const Blog = async () => {
               url={`/blog/${blog.id}`}
               image={blog.eyecatch.url}
               title={blog.title}
+              category={`${blog.category.name}`}
               date={formatDate(blog.publishedAt)}
               text={blog.text}
             />
           </div>
         ))}
       </CardList>
-      <BackButton />
+      <Button variant="back" url="/">TOP</Button>
     </>
   )
 }
