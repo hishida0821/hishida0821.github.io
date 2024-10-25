@@ -6,7 +6,10 @@ import Layout from "@/components/Layout.js";
 
 export const metadata = {
   title: "Hiroki Ishida",
-  description: "",
+  description: 'デスクリプション',
+  robots: {
+    index: false, // noindexの設定
+  },
 };
 
 const ubuntu = Ubuntu({
