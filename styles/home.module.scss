@@ -1,0 +1,17 @@
+@use "./mixin";
+@use "./color" as color;
+
+.home {
+  &_musthead {
+    padding: 80px 0;
+  }
+  &_section {
+    padding-top: 48px;
+    &:last-child {
+      padding-bottom: 48px;
+    }
+  }
+  &_lead_text {
+    margin-bottom: 16px;
+  }
+}

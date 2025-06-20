@@ -1,0 +1,16 @@
+@use "./mixin";
+@use "./color" as color;
+
+.primary_heading {
+  font-size: 3.2rem;
+  margin-bottom: 48px;
+  @include mixin.mq(sp) {
+    margin-bottom: 32px;
+  }
+  &:not(:first-child) {
+    margin-top: 48px;
+    @include mixin.mq(sp) {
+      margin-top: 32px;
+    }
+  }
+}

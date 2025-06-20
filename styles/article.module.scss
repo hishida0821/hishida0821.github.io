@@ -1,0 +1,27 @@
+@use "./mixin";
+@use "./color" as color;
+
+.article {
+  &_title {}
+  &_category {
+    display: inline-block;
+    color: #fff;
+    font-size: 1.4rem;
+    line-height: 1;
+    padding: 4px 8px;
+    background: #000;
+  }
+  &_date {
+    font-size: 1.4rem;
+    margin-top: 16px;
+  }
+  &_thumbnail {
+    margin-top: 8px;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  &_content {
+    margin-top: 32px;
+
+  }
+}

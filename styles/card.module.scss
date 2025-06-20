@@ -1,0 +1,42 @@
+@use "./mixin";
+@use "./color" as color;
+
+.card {
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  &_thumbnail {
+    border-radius: 8px;
+    overflow: hidden;
+    img {
+      transition: transform 0.3s ease-out;
+    }
+  }
+  &:hover {
+    .card_thumbnail {
+      img {
+        transform: scale(1.1);
+      }
+    }
+  }
+  &_category {
+    display: inline-block;
+    color: #fff;
+    font-size: 1.4rem;
+    line-height: 1;
+    margin-right: 8px;
+    padding: 4px 8px;
+    background: #000;
+  }
+  &_date {
+    display: inline-block;
+    font-size: 1.2rem;
+    margin-top: 8px;
+  }
+  &_title {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    margin-top: 8px;
+  }
+}

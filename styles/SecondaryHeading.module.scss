@@ -1,0 +1,10 @@
+@use "./mixin";
+@use "./color" as color;
+
+.secondary_heading {
+  font-size: 4rem;
+  margin-bottom: 32px;
+  &:not(:first-child) {
+    margin-top: 32px;
+  }
+}

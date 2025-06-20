@@ -1,0 +1,11 @@
+@use './mixin';
+
+.section {
+  display: block;
+  padding: 48px 0;
+  &_inner {
+    max-width: 1030px;
+    margin: 0 auto;
+    padding: 0 15px;
+  }
+}
